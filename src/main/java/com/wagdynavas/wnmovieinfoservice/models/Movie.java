@@ -5,13 +5,8 @@ public class Movie {
 
     private String id;
     private String title;
-    private String description;
+    private String overview;
 
-    public Movie(String id, String title, String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-    }
 
     public Movie() {
 
@@ -33,12 +28,12 @@ public class Movie {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
     @Override
@@ -50,14 +45,14 @@ public class Movie {
 
         if (id != null ? !id.equals(movie.id) : movie.id != null) return false;
         if (title != null ? !title.equals(movie.title) : movie.title != null) return false;
-        return description != null ? description.equals(movie.description) : movie.description == null;
+        return overview != null ? overview.equals(movie.overview) : movie.overview == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (overview != null ? overview.hashCode() : 0);
         return result;
     }
 
@@ -66,7 +61,7 @@ public class Movie {
         return "Movie ["
                 + ((id != null) ? "id=" + id + ", " : "")
                 + ((title != null) ? "title=" + title + ", " : "")
-                + ((description != null) ? "description=" + description : "")
+                + ((overview != null) ? "overview=" + overview : "")
                 + "]";
     }
 }
